@@ -1,0 +1,149 @@
+/* Accessibility: hide visually, keep available to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Base page background */
+body {
+  margin: 0;
+  background-image: url(../assets/images/background_primary.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Logo */
+#blayden-logo {
+  display: block;
+  margin: 0 auto;
+  width: min(400px, 90vw);
+  height: auto;
+  padding-bottom: 10px;
+}
+
+/* Layout container */
+main {
+  width: min(900px, 92vw);
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  row-gap: 0.75rem;
+  column-gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* Nav underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0;
+  background: #ff6a2a;
+  transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:focus-visible {
+  outline: 2px solid #ff6a2a;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Article panel */
+.article-panel {
+  background-image: url(../assets/images/backplate1.png);
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay for readability */
+.article-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.article-panel > * {
+  position: relative;
+}
+
+/* Typography + spacing */
+h2 {
+  color: #e0e0e0;
+}
+
+h3 {
+  color: #d0d0d0;
+}
+
+/* Force article titles to pop */
+.article-panel h3 {
+  color: #ffffff;
+}
+
+h2,
+h3 {
+  margin: 0 0 0.75rem;
+}
+
+p {
+  color: #b8b8b8;
+  margin: 0.75rem 0 0;
+}
+
+time {
+  color: #8c8c8c;
+}
